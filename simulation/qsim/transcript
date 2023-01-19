@@ -1,0 +1,363 @@
+# do MC68K.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:02:40 on Jan 18,2023
+# vcom -work work MC68K.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package altera_lnsim_components
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity MC68K
+# -- Compiling architecture structure of MC68K
+# End time: 18:02:42 on Jan 18,2023, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:02:42 on Jan 18,2023
+# vcom -work work Waveform68k-V15.0-DE1SoC_Short7us.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MC68K_vhd_vec_tst
+# -- Compiling architecture MC68K_arch of MC68K_vhd_vec_tst
+# End time: 18:02:43 on Jan 18,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.MC68K_vhd_vec_tst 
+# Start time: 18:02:43 on Jan 18,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.mc68k_vhd_vec_tst(mc68k_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading altera_lnsim.altera_lnsim_components
+# Loading cyclonev.cyclonev_atom_pack(body)
+# Loading cyclonev.cyclonev_components
+# Loading work.mc68k(structure)
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cyclonev.cyclonev_io_obuf(arch)
+# Loading cyclonev.cyclonev_io_ibuf(arch)
+# Loading cyclonev.cyclonev_pll_refclk_select(behavior)
+# Loading cyclonev.cyclonev_fractional_pll(behavior)
+# Loading sv_std.std
+# Loading altera_lnsim.altera_lnsim_functions
+# Loading altera_lnsim.generic_device_pll
+# Loading altera_lnsim.altera_generic_pll_functions
+# Loading altera_lnsim.generic_pll
+# Loading cyclonev.cyclonev_pll_reconfig(behavior)
+# Loading cyclonev.cyclonev_pll_output_counter(behavior)
+# Loading cyclonev.cyclonev_clkena(behavior)
+# Loading altera.dffeas(vital_dffeas)
+# Loading cyclonev.cyclonev_ram_block(block_arch)
+# Loading altera_lnsim.generic_m10k
+# Loading altera_lnsim.common_28nm_ram_block
+# Loading altera_lnsim.common_28nm_ram_register
+# Loading altera_lnsim.common_28nm_ram_pulse_generator
+# Loading cyclonev.cyclonev_jtag(behavior)
+# Loading altera_lnsim.altera_pll_reconfig_tasks
+# ** Warning: (vsim-3017) <protected>(<protected>): [TFMPC] - Too few port connections. Expected <protected>, found <protected>.
+#    Time: 0 ps  Iteration: 0  Protected: /mc68k_vhd_vec_tst/i1/\inst7|clockgen_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT\/inst/<protected> File: nofile
+# ** Warning: (vsim-3722) <protected>(<protected>): [TFMPC] - Missing connection for port '<protected>'.
+# ** Warning: (vsim-3015) <protected>(<protected>): [PCDPC] - Port size (<protected>) does not match connection size (<protected>) for <protected>.<protected>
+#    Time: 0 ps  Iteration: 0  Protected: /mc68k_vhd_vec_tst/i1/\inst7|clockgen_inst|altera_pll_i|general[0].gpll~PLL_RECONFIG\/inst/<protected> File: nofile
+# ** Warning: Design size of 999196 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#34
+# 
+# Warning: por to CB BFM is not connected, internal por is used.
+# 
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_0.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_0.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 mhz
+# Info: output_clock_frequency = 300.0 mhz
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 1666.666667
+# Info: output_clock_low_period = 1666.666667
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_1.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_1.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 mhz
+# Info: output_clock_frequency = 300.0 mhz
+# Info: phase_shift = 416 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 1666.666667
+# Info: output_clock_low_period = 1666.666667
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_2.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_2.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 mhz
+# Info: output_clock_frequency = 300.0 mhz
+# Info: phase_shift = 832 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 1666.666667
+# Info: output_clock_low_period = 1666.666667
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_3.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_3.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 mhz
+# Info: output_clock_frequency = 300.0 mhz
+# Info: phase_shift = 1248 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 1666.666667
+# Info: output_clock_low_period = 1666.666667
+# 
+# Warning: por to CB BFM is not connected, internal por is used.
+# 
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Simulation time: 3606030 ps
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_0.UI
+# Warning: The frequency of the reference clock signal differs from the specified frequency (50.0 mhz).
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_1.UI
+# Warning: The frequency of the reference clock signal differs from the specified frequency (50.0 mhz).
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_2.UI
+# Warning: The frequency of the reference clock signal differs from the specified frequency (50.0 mhz).
+# Info: hierarchical_name = mc68k_vhd_vec_tst.i1.\inst7|clockgen_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL\.inst.<protected>.<protected>.inst_pll_phase_3.UI
+# Warning: The frequency of the reference clock signal differs from the specified frequency (50.0 mhz).
+# Simulation time: 3606030 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 7780610 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 15593220 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 23410640 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 31363710 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 39199880 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 47118390 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 55061700 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 62908570 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 70822640 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 78590030 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 86346260 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 94187390 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 102013890 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 109765270 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 117555830 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 125530720 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 133267400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 141169400 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 148939830 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 156933370 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 164734080 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 172649490 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 180579550 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 188447330 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 196060230 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 203963440 ps
+# Simulation time: 211845010 ps
+# Simulation time: 211845010 ps
+# Simulation time: 211845010 ps
+# Simulation time: 211845010 ps
