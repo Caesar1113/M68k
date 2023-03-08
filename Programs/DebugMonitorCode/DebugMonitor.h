@@ -84,6 +84,8 @@
 #define SPI_Ext             (*(volatile unsigned char *)(0x00408026))
 #define SPI_CS              (*(volatile unsigned char *)(0x00408028))
 
+#define Enable_SPI_CS()     SPI_CS = 0xFE
+#define Disable_SPI_CS()    SPI_CS = 0xFF
 
 /********************************************************************************************
 **	RGB Colours
@@ -134,6 +136,7 @@ void VLine(int x, int y, int length, int colour) ;
 int sprintf(char *out, const char *format, ...) ;
 
 // SPI Prototypes
+int  TestForSPITransmitDataComplete(void);
 int  TestForSPITransmitData(void) ;
 int  TestForWriteFifoEmpty(void);
 int  ReadSPIChar(void);
@@ -189,3 +192,8 @@ void Decode3BitOperandMode(unsigned short int *OpCode) ;  // used with instructi
 void Decode3BitAddressRegister(unsigned short int Reg);
 void Decode3BitDataRegister(unsigned short int OpCode) ;
 unsigned short int Decode2BitOperandSize(unsigned short int OpCode);
+
+// Assignment 3 functions
+void WriteSPIInstruction(int cmd, int addr);
+void WaitSPIBusy(void);
+void EraseSPI(void);

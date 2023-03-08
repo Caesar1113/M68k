@@ -1,5 +1,5 @@
 Flow report for MC68K
-Wed Jan 18 18:02:39 2023
+Tue Feb 28 00:29:17 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jan 18 18:02:39 2023       ;
+; Flow Status                     ; Successful - Tue Feb 28 00:29:17 2023       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MC68K                                       ;
 ; Top-level Entity Name           ; MC68K                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 2,296 / 32,070 ( 7 % )                      ;
-; Total registers                 ; 1194                                        ;
-; Total pins                      ; 238 / 457 ( 52 % )                          ;
+; Logic utilization (in ALMs)     ; 2,715 / 32,070 ( 8 % )                      ;
+; Total registers                 ; 1440                                        ;
+; Total pins                      ; 243 / 457 ( 53 % )                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 263,280 / 4,065,280 ( 6 % )                 ;
+; Total block memory bits         ; 2,360,560 / 4,065,280 ( 58 % )              ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/18/2023 17:46:42 ;
+; Start date & time ; 02/28/2023 00:23:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MC68K               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ refer to the applicable agreement for further details.
 ; Assignment Name                                   ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP               ; On                                     ; Off           ; --          ; --             ;
-; COMPILER_SIGNATURE_ID                             ; 251485282480228.167409280218448        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                             ; 251485282480228.167757262815924        ; --            ; --          ; --             ;
 ; DO_COMBINED_ANALYSIS                              ; -- (Not supported for targeted family) ; Off           ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST                   ; Off                                    ; --            ; --          ; eda_simulation ;
 ; EDA_GENERATE_GATE_LEVEL_SIMULATION_COMMAND_SCRIPT ; Off                                    ; --            ; --          ; eda_simulation ;
@@ -136,16 +136,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:34     ; 1.0                     ; 4953 MB             ; 00:01:47                           ;
-; Fitter               ; 00:02:02     ; 1.2                     ; 7221 MB             ; 00:08:48                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 4884 MB             ; 00:00:11                           ;
-; Timing Analyzer      ; 00:00:16     ; 2.1                     ; 5401 MB             ; 00:00:31                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4924 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4744 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4863 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4744 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4862 MB             ; 00:00:03                           ;
-; Total                ; 00:04:18     ; --                      ; --                  ; 00:11:31                           ;
+; Analysis & Synthesis ; 00:01:44     ; 1.0                     ; 4979 MB             ; 00:02:05                           ;
+; Fitter               ; 00:02:55     ; 1.3                     ; 7267 MB             ; 00:11:06                           ;
+; Assembler            ; 00:00:14     ; 1.0                     ; 4913 MB             ; 00:00:13                           ;
+; Timing Analyzer      ; 00:00:22     ; 2.5                     ; 5441 MB             ; 00:00:50                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4958 MB             ; 00:00:05                           ;
+; Total                ; 00:05:20     ; --                      ; --                  ; 00:14:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -154,15 +150,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ALIENWARE-M15    ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-QFKTLG8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-QFKTLG8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-QFKTLG8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-QFKTLG8  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-QFKTLG8  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -174,10 +166,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off MC68K -c MC68K
 quartus_asm --read_settings_files=off --write_settings_files=off MC68K -c MC68K
 quartus_sta MC68K -c MC68K
 quartus_eda --read_settings_files=off --write_settings_files=off MC68K -c MC68K
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MC68K -c MC68K --vector_source=C:/M68k/Waveform68k-V15.0-DE1SoC_Short7us.vwf --testbench_file=C:/M68k/simulation/qsim/Waveform68k-V15.0-DE1SoC_Short7us.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/M68k/simulation/qsim/ MC68K -c MC68K
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MC68K -c MC68K --vector_source=C:/M68k/Waveform68k-V15.0-DE1SoC_Short7us.vwf --testbench_file=C:/M68k/simulation/qsim/Waveform68k-V15.0-DE1SoC_Short7us.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/M68k/simulation/qsim/ MC68K -c MC68K
 
 
 

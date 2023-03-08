@@ -13,22 +13,35 @@ module SramBlockDecoder_Verilog(
 	
 		// default block selects are inactive - override as appropriate later
 		
-		Block0_H <= 0; 
-		Block1_H <= 0;
-		Block2_H <= 0; 
-		Block3_H <= 0;
+		//Block0_H <= 0; //00
+		//Block1_H <= 0; //01
+		//Block2_H <= 0; //10
+		//Block3_H <= 0; //11
 	
 		// decode the top two address lines plus SRamSelect to provide 4 block select signals
 		// for 4 blocks of 64k bytes (32k words) to give 256k bytes in total
-		if(SRamSelect_H) begin
-			case(Address[16:15]) 
-				2'b00:Block0_H<=1;
-				2'b01:Block1_H<=1;		 	
-				2'b10:Block2_H<=1;
-				2'b11:Block3_H<=1;				
-			endcase
-		end
+	
 		// TODO
 		
+		// We use Address [16:15] to select block
+		//Block0_H <= SRamSelect_H & ~Address[16] & ~Address[15]; //00
+		//Block1_H <= SRamSelect_H & ~Address[16] & Address[15];  //01
+		//Block2_H <= SRamSelect_H & Address[16] & ~Address[15];  //10
+		//Block3_H <= SRamSelect_H & Address[16] & Address[15];   //11
+		
+		Block0_H <= 0; //00
+		Block1_H <= 0; //01
+		Block2_H <= 0; //10
+		Block3_H <= 0; //11
+		
+		if(SRamSelect_H) begin
+			case(Address[16:15])
+				2'b00: {Block0_H, Block1_H, Block2_H, Block3_H} <= 4'b1000;
+				2'b01: {Block0_H, Block1_H, Block2_H, Block3_H} <= 4'b0100;
+				2'b10: {Block0_H, Block1_H, Block2_H, Block3_H} <= 4'b0010;
+				2'b11: {Block0_H, Block1_H, Block2_H, Block3_H} <= 4'b0001;
+				default: {Block0_H, Block1_H, Block2_H, Block3_H} <= 4'bx;
+			endcase
+		end
 	end
 endmodule

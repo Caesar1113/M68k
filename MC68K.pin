@@ -216,7 +216,7 @@ Can1_TX                      : AD17      : output : 3.3-V LVTTL       :         
 VCCIO4A                      : AD18      : power  :                   : 3.3V    : 4A        :                
 DataBusIn[4]                 : AD19      : output : 3.3-V LVTTL       :         : 4A        : Y              
 DataBusIn[11]                : AD20      : output : 3.3-V LVTTL       :         : 4A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4A        :                
+DramState[3]                 : AD21      : output : 3.3-V LVTTL       :         : 4A        : N              
 VCC_AUX                      : AD22      : power  :                   : 2.5V    :           :                
 GND                          : AD23      : gnd    :                   :         :           :                
 LCD_Data[4]                  : AD24      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -261,9 +261,9 @@ GND                          : AF2       : gnd    :                   :         
 GND                          : AF3       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3A        :                
+DramState[1]                 : AF6       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 3.3V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3A        :                
+DramState[4]                 : AF8       : output : 3.3-V LVTTL       :         : 3A        : N              
 SW[2]                        : AF9       : input  : 3.3-V LVTTL       :         : 3A        : Y              
 SW[3]                        : AF10      : input  : 3.3-V LVTTL       :         : 3A        : Y              
 DRAM_CAS_N                   : AF11      : output : 3.3-V LVTTL       :         : 3B        : Y              
@@ -378,7 +378,7 @@ HEX1[0]                      : AJ29      : output : 3.3-V LVTTL       :         
 GND                          : AJ30      : gnd    :                   :         :           :                
 DataBusOut[0]                : AK2       : output : 3.3-V LVTTL       :         : 3B        : Y              
 LDS_L                        : AK3       : output : 3.3-V LVTTL       :         : 3B        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK4       :        :                   :         : 3B        :                
+DramState[2]                 : AK4       : output : 3.3-V LVTTL       :         : 3B        : N              
 GND                          : AK5       : gnd    :                   :         :           :                
 DRAM_DQ[0]                   : AK6       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
 DRAM_DQ[2]                   : AK7       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
@@ -390,7 +390,7 @@ DRAM_UDQM                    : AK12      : output : 3.3-V LVTTL       :         
 DRAM_CKE                     : AK13      : output : 3.3-V LVTTL       :         : 3B        : Y              
 DRAM_ADDR[0]                 : AK14      : output : 3.3-V LVTTL       :         : 3B        : Y              
 GND                          : AK15      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK16      :        :                   :         : 4A        :                
+DramState[0]                 : AK16      : output : 3.3-V LVTTL       :         : 4A        : N              
 VREFB4AN0                    : AK17      : power  :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                

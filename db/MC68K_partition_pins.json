@@ -104,6 +104,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "DataBusIn[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataBusIn[0]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -140,6 +172,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "sck_o",
+					"strict" : false
+				},
+				{
+					"name" : "mosi_o",
+					"strict" : false
+				},
+				{
 					"name" : "Dtack_L",
 					"strict" : false
 				},
@@ -152,11 +192,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "DramRamSelect_H",
+					"strict" : false
+				},
+				{
 					"name" : "IOSelect_H",
 					"strict" : false
 				},
 				{
 					"name" : "BG_L",
+					"strict" : false
+				},
+				{
+					"name" : "ResetOut",
+					"strict" : false
+				},
+				{
+					"name" : "DramDtack_L",
 					"strict" : false
 				},
 				{
@@ -313,6 +365,86 @@
 				},
 				{
 					"name" : "AddressBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_BA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_BA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DramState[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DramState[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DramState[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DramState[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DramState[0]",
 					"strict" : false
 				},
 				{
@@ -556,6 +688,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SSN_O[0]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_B[7]",
 					"strict" : false
 				},
@@ -652,7 +788,67 @@
 					"strict" : false
 				},
 				{
-					"name" : "Reset_L",
+					"name" : "DRAM_DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[0]",
 					"strict" : false
 				},
 				{
@@ -680,15 +876,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
 					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Reset_L",
 					"strict" : false
 				},
 				{
@@ -705,6 +905,10 @@
 				},
 				{
 					"name" : "TraceRequest_L",
+					"strict" : false
+				},
+				{
+					"name" : "miso_i",
 					"strict" : false
 				},
 				{

@@ -4,20 +4,19 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 */
 //#pragma file_not_in_maxplusii_format
 (header "graphic" (version "1.4"))
@@ -924,7 +923,7 @@ agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 2256 -56 2320 -40))
+	(annotation_block (location)(rect 2184 -56 2248 -40))
 )
 (pin
 	(output)
@@ -1145,6 +1144,7 @@ agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 2280 1456 2352 1480))
 )
 (pin
 	(output)
@@ -1162,6 +1162,22 @@ agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 2184 2576 2248 2592))
+)
+(pin
+	(output)
+	(rect 1840 -56 2016 -40)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "DramState[4..0]" (rect 90 0 169 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
 )
 (pin
 	(bidir)
@@ -3037,42 +3053,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1520 672 1736 768)
-	(text "OnChipROM16KWords" (rect 5 0 133 14)(font "Arial" (font_size 8)))
-	(text "inst16" (rect 8 80 37 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "RomSelect_H" (rect 0 0 75 14)(font "Arial" (font_size 8)))
-		(text "RomSelect_H" (rect 21 27 96 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Address[13..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
-		(text "Address[13..0]" (rect 21 43 105 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "Clock" (rect 0 0 30 14)(font "Arial" (font_size 8)))
-		(text "Clock" (rect 21 59 51 73)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "DataOut[15..0]" (rect 0 0 81 14)(font "Arial" (font_size 8)))
-		(text "DataOut[15..0]" (rect 114 27 195 41)(font "Arial" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 80))
-	)
-)
-(symbol
 	(rect 816 576 1064 752)
 	(text "AddressDecoder_Verilog" (rect 5 0 125 12)(font "Arial" ))
 	(text "inst20" (rect 8 160 37 172)(font "Arial" ))
@@ -3363,6 +3343,42 @@ agreement for further details.
 		(rectangle (rect 16 16 248 272))
 	)
 )
+(symbol
+	(rect 1520 672 1736 768)
+	(text "OnChipROM16KWords" (rect 5 0 133 14)(font "Arial" (font_size 8)))
+	(text "inst16" (rect 8 80 37 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "RomSelect_H" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "RomSelect_H" (rect 21 27 96 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Address[13..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
+		(text "Address[13..0]" (rect 21 43 105 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Clock" (rect 0 0 30 14)(font "Arial" (font_size 8)))
+		(text "Clock" (rect 21 59 51 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "DataOut[15..0]" (rect 0 0 81 14)(font "Arial" (font_size 8)))
+		(text "DataOut[15..0]" (rect 114 27 195 41)(font "Arial" (font_size 8)))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 80))
+	)
+)
 (connector
 	(pt 592 240)
 	(pt 1248 240)
@@ -3475,10 +3491,6 @@ agreement for further details.
 (connector
 	(pt -256 224)
 	(pt -176 224)
-)
-(connector
-	(pt -272 240)
-	(pt -176 240)
 )
 (connector
 	(pt -240 272)
@@ -4401,14 +4413,6 @@ agreement for further details.
 	(pt 576 -664)
 )
 (connector
-	(pt -272 -664)
-	(pt -272 240)
-)
-(connector
-	(pt -272 240)
-	(pt -272 1304)
-)
-(connector
 	(pt 1360 280)
 	(pt 2080 280)
 )
@@ -4498,10 +4502,6 @@ agreement for further details.
 (connector
 	(pt 1920 -80)
 	(pt 1920 112)
-)
-(connector
-	(pt 1904 -64)
-	(pt 1904 96)
 )
 (connector
 	(pt 600 2728)
@@ -5512,6 +5512,31 @@ agreement for further details.
 	(pt 1904 -64)
 	(pt 2080 -64)
 )
+(connector
+	(pt -272 -664)
+	(pt -272 1304)
+)
+(connector
+	(pt -176 240)
+	(pt -192 240)
+)
+(connector
+	(pt -192 480)
+	(pt -192 240)
+)
+(connector
+	(pt 1904 480)
+	(pt -192 480)
+)
+(connector
+	(pt 1904 -64)
+	(pt 1904 480)
+)
+(connector
+	(pt 1760 -48)
+	(pt 1840 -48)
+	(bus)
+)
 (junction (pt 1280 224))
 (junction (pt 1376 224))
 (junction (pt 1296 240))
@@ -5584,7 +5609,6 @@ agreement for further details.
 (junction (pt 1248 -664))
 (junction (pt 576 -664))
 (junction (pt -272 -664))
-(junction (pt -272 240))
 (junction (pt 1224 656))
 (junction (pt 1112 688))
 (junction (pt 1096 720))
@@ -5694,7 +5718,7 @@ agreement for further details.
 (text "THAN ALLOW THE FITTER TO ASSIGN THEM TO SOMEWHERE WHERE IT MAY CAUSE PROBLEMS. IF YOU WANT TO USE THE GPIO PINS FOR ANOTHER PURPOSE, ASSIGN THE " (rect 2936 -744 4248 -728)(font "Arial" (color 0 0 255)(font_size 10)))
 (text "Bi-Directional Data Bus for expansion - NOT used here" (rect 2592 328 2902 342)(font "Arial" (font_size 8)))
 (text "FOR SIMULATION PURPOSES" (rect 2456 56 2623 70)(font "Arial" (color 202 38 16)(font_size 8)))
-(text "FOR SIMULATION PURPOSES" (rect 2296 -104 2463 -90)(font "Arial" (color 202 38 16)(font_size 8)))
+(text "FOR SIMULATION PURPOSES" (rect 2368 -104 2535 -90)(font "Arial" (color 202 38 16)(font_size 8)))
 (text "FOR SIMULATION PURPOSES" (rect 2448 472 2615 486)(font "Arial" (color 202 38 16)(font_size 8)))
 (text "FOR SIMULATION PURPOSES" (rect 3152 -144 3319 -130)(font "Arial" (color 202 38 16)(font_size 8)))
 (text "FOR SIMULATION PURPOSES" (rect -32 -952 135 -938)(font "Arial" (color 202 38 16)(font_size 8)))

@@ -105,11 +105,25 @@ micro_state.div14 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 micro_state.div15 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |MC68K|Dram:inst2|M68kDramController_Verilog:inst1|CurrentState
-Name CurrentState.PrechargingAllBanks CurrentState.IssueFirstNOP CurrentState.WaitingForPowerUpState CurrentState.InitialisingState 
-CurrentState.InitialisingState 0 0 0 0 
-CurrentState.WaitingForPowerUpState 0 0 1 1 
-CurrentState.IssueFirstNOP 0 1 0 1 
-CurrentState.PrechargingAllBanks 1 0 0 1 
+Name CurrentState.TerminateState CurrentState.NopAfterReadCommand CurrentState.NopAfterWriteCommand CurrentState.WaitWriteCommand CurrentState.ReadCommand CurrentState.RefreshAfter CurrentState.IssueNOPAfter CurrentState.PrechargingAllBanksAfter CurrentState.IdleState CurrentState.RefreshTimeout CurrentState.ThreeNops CurrentState.LoadModeReg CurrentState.Refresh CurrentState.IssueNOP CurrentState.PrechargingAllBanks CurrentState.IssueFirstNOP CurrentState.WaitingForPowerUpState CurrentState.InitialisingState 
+CurrentState.InitialisingState 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.WaitingForPowerUpState 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.IssueFirstNOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.PrechargingAllBanks 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.IssueNOP 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.Refresh 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.LoadModeReg 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.ThreeNops 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.RefreshTimeout 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.IdleState 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.PrechargingAllBanksAfter 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CurrentState.IssueNOPAfter 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.RefreshAfter 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.ReadCommand 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.WaitWriteCommand 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.NopAfterWriteCommand 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.NopAfterReadCommand 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.TerminateState 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |MC68K|OnChipM68xxIO:inst11|ACIA_6850:inst16|DCDState
 Name DCDState.DCD_State_Reset DCDState.DCD_State_Int DCDState.DCD_State_Idle 

@@ -1,22 +1,22 @@
 {
 	"system" : {
 		"platform" : "windows64",
-		"os_name" : "Windows 7",
-		"os_version" : "6.2"
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
 	},
 	"error" : {
 		"executable" : "quartus",
 		"comment" : "not_applicable",
-		"error_message" : "Access Violation at 0X0000000070D56E84",
+		"error_message" : "Access Violation at 0X00007FFC008D1D1D",
 		"source_file" : "unknown",
 		"line" : "0",
-		"stack_trace" : "\t 0x70d56e83: QtGui4 + 0x86e83 (?testAttribute_helper@QWidget@@AEBA_NW4WidgetAttribute@Qt@@@Z + 0x23)\n\t 0x70cfb39e: QtGui4 + 0x2b39e (?notify@QApplication@@UEAA_NPEAVQObject@@PEAVQEvent@@@Z + 0x75e)\n\t 0x7079aaab: QtCore4 + 0x13aaab (?notifyInternal@QCoreApplication@@AEAA_NPEAVQObject@@PEAVQEvent@@@Z + 0x7b)\n\t 0x70cffa3e: QtGui4 + 0x2fa3e (?sendMouseEvent@QApplicationPrivate@@SA_NPEAVQWidget@@PEAVQMouseEvent@@00PEAPEAV2@AEAV?$QPointer@VQWidget@@@@_N@Z + 0x1de)\n\t 0x70d74530: QtGui4 + 0xa4530 (?trUtf8@QScrollBar@@SA?AVQString@@PEBD0H@Z + 0x1450)\n\t 0x70d77f61: QtGui4 + 0xa7f61 (?winMouseButtonUp@QApplication@@SAXXZ + 0x2771)\n\t0x7ff90c451168: USER32 + 0x11168 (DispatchMessageW + 0x688)\n\t0x7ff90c450c96: USER32 + 0x10c96 (DispatchMessageW + 0x1b6)\n\t 0x707c8f42: QtCore4 + 0x168f42 (?processEvents@QEventDispatcherWin32@@UEAA_NV?$QFlags@W4ProcessEventsFlag@QEventLoop@@@@@Z + 0x3e2)\n\t 0x70d6f864: QtGui4 + 0x9f864 (?openPopup@QApplicationPrivate@@QEAAXPEAVQWidget@@@Z + 0x204)\n\t 0x70796a7b: QtCore4 + 0x136a7b (?exec@QEventLoop@@QEAAHV?$QFlags@W4ProcessEventsFlag@QEventLoop@@@@@Z + 0x22b)\n\t 0x70799cbf: QtCore4 + 0x139cbf (?exec@QCoreApplication@@SAHXZ + 0xdf)\n\t0x7ff77cbf197b: quartus + 0x197b\n\t0x7ff8fe1dcbe8: CCL_MSG + 0xcbe8 (?msg_initialize_out_of_memory_handler@@YAXXZ + 0x378)\n\t0x7ff8fe1de31c: CCL_MSG + 0xe31c (?msg_set_stack_size@@YAXH@Z + 0x7c)\n\t0x7ff8fe4e4c0c: ccl_mem + 0x4c0c (?mem_malloc_wrapper@@YAPEAX_KPEAVMEM_TRACKER_THUNK@@PEBD@Z + 0x18c)\n\t0x7ff8fe1dc831: CCL_MSG + 0xc831 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff77cbf2507: quartus + 0x2507\n\t0x7ff77cbf1e74: quartus + 0x1e74\n\t0x7ff90cb68101: KERNEL32 + 0x18101 (BaseThreadInitThunk + 0x21)\n\t0x7ff90d05c5b3: ntdll + 0x5c5b3 (RtlUserThreadStart + 0x33)\n",
+		"stack_trace" : "\t0x7ffc008d1d1c: ntdll + 0x21d1c (RtlEnterCriticalSection + 0xc)\n\t0x7ffb835c226a: wintab32 + 0x226a (Ordinal998 + 0x226a)\n\t0x7ffb835c101c: wintab32 + 0x101c (Ordinal998 + 0x101c)\n\t0x7ffb835c91a3: wintab32 + 0x91a3 (WTMgrCsrPressureBtnMarksEx + 0x793)\n\t0x7ffc008d8dde: ntdll + 0x28dde (RtlActivateActivationContextUnsafeFast + 0x12e)\n\t0x7ffc00901775: ntdll + 0x51775 (LdrShutdownProcess + 0x175)\n\t0x7ffc0090136c: ntdll + 0x5136c (RtlExitUserProcess + 0xac)\n\t0x7ffbff0d82ba: KERNEL32 + 0x182ba (ExitProcess + 0xa)\n\t0x7ffbda9329a6: MSVCR120 + 0x229a6 (_initterm_e + 0x21a)\n\t0x7ff7e9441e6f: quartus + 0x1e6f (__tmainCRTStartup + 0x15f)\n\t0x7ffbff0d26bc: KERNEL32 + 0x126bc (BaseThreadInitThunk + 0x1c)\n\t0x7ffc0090dfb7: ntdll + 0x5dfb7 (RtlUserThreadStart + 0x27)\n",
 		"subsystem" : "unknown"
 	},
 	"quartus" : {
 		"quartus_bits" : "64",
-		"version" : "15.0.0",
-		"build" : "145",
-		"edition" : "Web Edition"
+		"version" : "18.1.0",
+		"build" : "625",
+		"edition" : "Lite Edition"
 	}
 }

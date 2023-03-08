@@ -29,8 +29,11 @@ module AddressDecoder_Verilog (
 		if(Address[31:15] == 17'b0000_0000_0000_0000_0) 	// ON CHIP ROM address hex 0000 0000 - 0000 7FFF 32k full decoding
 			OnChipRomSelect_H <= 1 ;								// DO NOT CHANGE - debugger expects rom at this address
 		
-		if(Address[31:18] == 14'b0000_1000_0000_00) 			// address hex 0800 0000 - 0803 FFFF Partial decoding - 256kbytes
-			OnChipRamSelect_H <= 1 ;								// DO NOT CHANGE - debugger expects memory at this address
+		//if(Address[31:18] == 14'b0000_1000_0000_00) 			// address hex 0800 0000 - 0803 FFFF Partial decoding - 256kbytes
+		//	OnChipRamSelect_H <= 1 ;								// DO NOT CHANGE - debugger expects memory at this address
+			
+		if(Address[31:0] >= 32'hF0000000 && Address[31:0] <= 32'hF003FFFF) 			// address hex 0800 0000 - 0803 FFFF Partial decoding - 256kbytes
+			OnChipRamSelect_H <= 1 ;		
 			
 		if(Address[31:16] == 16'b0000_0000_0100_0000)  		// address hex 0040 0000 - 0040 FFFF Partial decoding
 			IOSelect_H <= 1 ;											// DO NOT CHANGE - debugger expects IO at this address
@@ -39,6 +42,8 @@ module AddressDecoder_Verilog (
 		// add other decoder signals here as we work through assignments and labs
 		//
 		
+		if(Address[31:0] >= 32'h08000000 && Address[31:0] <= 32'h0BFFFFFF)
+			DramSelect_H <= 1 ; // Place the SDram in the memory map
 		
 		
 		
