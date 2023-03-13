@@ -21,9 +21,9 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 184 200 352 216)
+	(rect 176 312 344 328)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "WE_L" (rect 5 0 33 17)(font "Intel Clear" ))
+	(text "ValidityBitIn" (rect 5 0 65 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -37,9 +37,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 184 264 352 280)
+	(rect 184 352 352 368)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Clock" (rect 5 0 32 17)(font "Intel Clear" ))
+	(text "WE_L" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -53,9 +53,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 184 160 352 176)
+	(rect 160 392 328 408)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "ValidityBitIn" (rect 5 0 64 12)(font "Arial" ))
+	(text "Index[2..0]" (rect 5 0 54 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -69,9 +69,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 184 232 352 248)
+	(rect 136 456 304 472)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Index[4..0]" (rect 5 0 53 17)(font "Intel Clear" ))
+	(text "Clock" (rect 5 0 33 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -85,9 +85,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 800 192 976 208)
+	(rect 848 336 1024 352)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "ValidityBitOut" (rect 90 0 157 12)(font "Arial" ))
+	(text "ValidityBitOut" (rect 90 0 157 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -100,33 +100,8 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 392 192 440 224)
-	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "inst2" (rect 3 21 25 38)(font "Intel Clear" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 13 16))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(line (pt 39 16)(pt 48 16))
-	)
-	(drawing
-		(line (pt 13 25)(pt 13 7))
-		(line (pt 13 7)(pt 31 16))
-		(line (pt 13 25)(pt 31 16))
-		(circle (rect 31 12 39 20))
-	)
-)
-(symbol
-	(rect 496 160 712 288)
-	(text "Valid_Data" (rect 77 0 151 16)(font "Arial" (font_size 10)))
+	(rect 544 312 760 440)
+	(text "Valid_Bit_Associative" (rect 46 0 193 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -145,8 +120,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "address[4..0]" (rect 0 0 75 14)(font "Arial" (font_size 8)))
-		(text "address[4..0]" (rect 4 50 79 64)(font "Arial" (font_size 8)))
+		(text "address[2..0]" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "address[2..0]" (rect 4 50 79 64)(font "Arial" (font_size 8)))
 		(line (pt 0 64)(pt 88 64)(line_width 3))
 	)
 	(port
@@ -165,7 +140,7 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(text "1 bit" (rect 109 24 121 45)(font "Arial" )(vertical))
-		(text "32 words" (rect 120 12 132 55)(font "Arial" )(vertical))
+		(text "8 words" (rect 120 13 132 50)(font "Arial" )(vertical))
 		(text "Block type: AUTO" (rect 48 114 137 126)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))
@@ -208,54 +183,76 @@ refer to the applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 )
-(connector
-	(pt 352 168)
-	(pt 448 168)
+(symbol
+	(rect 448 344 496 376)
+	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 21 25 38)(font "Intel Clear" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
 )
 (connector
-	(pt 448 168)
-	(pt 448 192)
+	(pt 344 320)
+	(pt 512 320)
 )
 (connector
-	(pt 448 192)
-	(pt 496 192)
+	(pt 352 360)
+	(pt 448 360)
 )
 (connector
-	(pt 352 240)
-	(pt 416 240)
-	(bus)
+	(pt 512 320)
+	(pt 512 344)
 )
 (connector
-	(pt 416 240)
-	(pt 416 224)
-	(bus)
+	(pt 512 344)
+	(pt 544 344)
 )
 (connector
-	(pt 416 224)
-	(pt 496 224)
-	(bus)
+	(pt 496 360)
+	(pt 544 360)
 )
 (connector
-	(pt 352 208)
-	(pt 392 208)
+	(pt 328 400)
+	(pt 512 400)
 )
 (connector
-	(pt 440 208)
-	(pt 496 208)
+	(pt 512 400)
+	(pt 512 376)
 )
 (connector
-	(pt 712 192)
-	(pt 760 192)
+	(pt 512 376)
+	(pt 544 376)
 )
 (connector
-	(pt 760 200)
-	(pt 760 192)
+	(pt 304 464)
+	(pt 400 464)
 )
 (connector
-	(pt 760 200)
-	(pt 800 200)
+	(pt 400 464)
+	(pt 400 424)
 )
 (connector
-	(pt 352 272)
-	(pt 496 272)
+	(pt 400 424)
+	(pt 544 424)
+)
+(connector
+	(pt 760 344)
+	(pt 848 344)
 )
