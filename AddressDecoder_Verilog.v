@@ -44,7 +44,9 @@ module AddressDecoder_Verilog (
 		
 		if(Address[31:0] >= 32'h08000000 && Address[31:0] <= 32'h0BFFFFFF)
 			DramSelect_H <= 1 ; // Place the SDram in the memory map
-		
+			
+		if(Address[31:16] == 16'b0000000001010000) // upper 50
+			CanBusSelect_H <= 1 ;
 		
 		
 		end

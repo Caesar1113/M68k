@@ -90,6 +90,27 @@
 #define PIA2_PortB_Control *(volatile unsigned char *)(0x00400066)
 
 
+
+
+
+// I2C Registers
+#define I2C_PRERLO     (*(volatile unsigned char *)(0x00408000))
+#define I2C_PRERHI     (*(volatile unsigned char *)(0x00408002))
+#define I2C_CTR        (*(volatile unsigned char *)(0x00408004))
+#define I2C_TXR        (*(volatile unsigned char *)(0x00408006))
+#define I2C_RXR        (*(volatile unsigned char *)(0x00408006))
+#define I2C_CR         (*(volatile unsigned char *)(0x00408008))
+#define I2C_SR         (*(volatile unsigned char *)(0x00408008))
+// STA bit == cmd[7], W bit == cmd[4], IACK bit == cmd[0] -> 8'b1001_0001
+#define WSTART 0x91
+// STO bit == cmd[6], W bit == cmd[4] -> 8'b0101_0000
+#define WSTOP 0x50
+// W bit = cmd[4] -> 8'b0001_0000
+#define WRITE 0x10
+// R bit == cmd[5], NACK bit == cmd[3], IACK bit == cmd[0] -> 8'b0010_1001
+#define READNACK 0x29
+// R bit == cmd[5], NACK bit == cmd[3], IACK bit == cmd[0] -> 8'b0010_0001
+#define READACK 0x21
 /*********************************************************************************************************************************
 (( DO NOT initialise global variables here, do it main even if you want 0
 (( it's a limitation of the compiler
@@ -119,6 +140,14 @@ int sprintf(char *out, const char *format, ...) ;
 **  out which timer is producing the interrupt
 **
 *****************************************************************************************/
+void I2C_Init(void);
+void I2C_Start(void);
+void I2C_Stop(void);
+void WaitForTIPFlagReset(void);
+void WaitForRxACK(void);
+void WriteByte(char data, char slave_addr, char memaddr_hi, char memaddr_lo);
+void ReadByte(char *data, char slave_addr, char memaddr_hi, char memaddr_lo);
+
 
 void Timer_ISR()
 {
@@ -313,6 +342,79 @@ void LCDLine2Message(char *theMessage)
 **  and in the 2nd parameter, you pass it the exception number that you want to take over (see 68000 exceptions for details)
 **  Calling this function allows you to deal with Interrupts for example
 ***********************************************************************************************************************************/
+void I2C_Start(void){
+    // Start condition is 8'b1000_0000
+    I2C_CR = 0x80;
+}
+
+void I2C_Stop(void){
+    // Stop condition is 8'b0100_0000
+    I2C_CR = 0x40;
+}
+
+void I2C_Init(void){
+    // Make sure I2C core is off
+    I2C_CTR = (char)0x00;
+    // Prescale register clock, 25Mhz / (5 * 100KHz) - 1  -> 0x0031
+    I2C_PRERLO = (char)0x31;
+    I2C_PRERHI = (char)0x00;
+    // 8'b10xx_xxxx
+    I2C_CTR = (char)0x80;
+}
+
+void WaitForRxACK(void){
+    // Read RxACK bit from Status Register, should be '0'
+    // Status Register [7] == 0
+    while(((I2C_SR >> 7) & 1) == 1){
+    }
+}
+
+void WaitForTIPFlagReset(void){
+    // Status Register [1] == 0
+    while((I2C_SR >> 1) & 1){
+    }
+}
+
+void Wait(void){
+    WaitForTIPFlagReset();
+    WaitForRxACK();
+}
+
+void TransmitI2C(char data, char cr){
+    I2C_TXR = data;
+    I2C_CR = cr;
+    Wait();
+}
+
+
+void WriteByte(char data, char slave_addr, char memaddr_hi, char memaddr_lo){
+    // Check before doing anything
+    WaitForTIPFlagReset();
+    // Set slave to write mode, Generate start command
+    TransmitI2C(slave_addr, WSTART);
+    // Write Mem Address and set W bit
+    TransmitI2C(memaddr_hi, WRITE);
+    TransmitI2C(memaddr_lo, WRITE);
+    // Write data transmit register, set STO bit, set W bit. 
+    TransmitI2C(data, WSTOP);
+}
+void ReadByte(char *data, char slave_addr, char memaddr_hi, char memaddr_lo){
+    // Check before doing anything
+    WaitForTIPFlagReset();
+    // Set slave to write mode, Generate start command
+    TransmitI2C(slave_addr, WSTART);
+    // Write Mem Address and set W bit
+    TransmitI2C(memaddr_hi, WRITE);
+    TransmitI2C(memaddr_lo, WRITE);
+    // Set slave to read mode and generate start command for reading
+    TransmitI2C(slave_addr | 1, WSTART);
+    // Read data transmit register, set R bit, set NACK and IACK
+    I2C_CR = READNACK;
+    // Wait for read data to come in
+    while((I2C_SR & 1) !=1){}
+    *data = I2C_RXR;
+    I2C_CR = 0x41;
+}
 
 void InstallExceptionHandler( void (*function_ptr)(), int level)
 {
@@ -327,7 +429,7 @@ void InstallExceptionHandler( void (*function_ptr)(), int level)
 
 void main()
 {
-    unsigned int row, i=0, count=0, counter1=1;
+    unsigned int row, i=0, count=0, counter1=1, Keyboard_Input;
     char c, text[150] ;
 
 	int PassFailFlag = 1 ;
@@ -359,15 +461,11 @@ void main()
 *************************************************************************************************/
 
     scanflush() ;                       // flush any text that may have been typed ahead
-    printf("\r\nEnter Integer: ") ;
-    scanf("%d", &i) ;
-    printf("You entered %d", i) ;
+    printf("\r\nEnter Integer to indicate what to test: 1:Write bit\n. 2:Read bit\n. 3.Write block\n. 4.Read block. 5.DAC. 6.ADC : ") ;
+    scanf("%d", &Keyboard_Input) ;
+    printf("You entered %d", &Keyboard_Input) ;
 
-    sprintf(text, "Hello CPEN 412 Student") ;
-    LCDLine1Message(text) ;
 
-    printf("\r\nHello CPEN 412 Student\r\nYour LEDs should be Flashing") ;
-    printf("\r\nYour LCD should be displaying") ;
 
     while(1)
         ;
